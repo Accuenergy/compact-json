@@ -80,7 +80,7 @@ def command_line_parser() -> argparse.ArgumentParser:
         "-i",
         metavar="N",
         type=int,
-        default=4,
+        default=2,
         help="Indent N spaces (default=4)",
     )
     parser.add_argument(
@@ -101,7 +101,7 @@ def command_line_parser() -> argparse.ArgumentParser:
         "-l",
         metavar="N",
         type=int,
-        default=50,
+        default=120,
         help="Limit inline elements to N chars, excluding "
         "indentation and leading property names (default=50)",
     )
