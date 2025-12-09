@@ -224,19 +224,9 @@ def main() -> None:  # noqa: C901, PLR0915, PLR0912
         in_files = args.json
         out_files = args.output
 
-        if out_files is None:
-            for fh in args.json:
-                obj = json.load(fh)
-                json_string = formatter.serialize(obj)
-                print(json_string, end=line_ending)
-            return
-
-        if len(in_files) != len(out_files):
-            die("the numbers of input and output file names do not match")
-
-        for fn_in, fn_out in zip(args.json, args.output):
+        for fn_in in args.json:
             obj = json.load(fn_in)
-            json_string = formatter.dump(obj, output_file=fn_out)
+            json_string = formatter.dump(obj, output_file=fn_in.name)
 
 
 if __name__ == "__main__":  # pragma: no cover
