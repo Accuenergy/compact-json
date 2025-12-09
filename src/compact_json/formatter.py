@@ -493,6 +493,7 @@ class Formatter:
         return arr
 
     def format_list_inline(self: Formatter, item: FormattedNode) -> bool:
+        return False
         """Try to format this list in a single line, if possible."""
         if (
             item.depth <= self.always_expand_depth
@@ -542,6 +543,7 @@ class Formatter:
         Span multiple lines, but with several items per line, if possible.
         """
         debug("format_list_multiline_compact()")
+        return False
         if (
             item.depth <= self.always_expand_depth
             or item.complexity > self.max_compact_list_complexity
